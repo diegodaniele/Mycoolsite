@@ -1,0 +1,80 @@
+@import '../../../../assets/styles/settings/colors';
+
+.bottomSocial {
+  position: fixed;
+  bottom: 140px;
+  font-size: 16px;
+  font-family: 'Fira Mono', monospace;
+
+  &:before {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    width: 1px;
+    background: rgba($text_color, 0.2);
+    height: 125px;
+  }
+
+  &.left {
+    left: 40px;
+
+    &:before {
+      left: 50px;
+    }
+  }
+
+  &.right {
+    right: 42px;
+    &:before {
+      right: 50px;
+    }
+  }
+
+  &.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 22px;
+
+    p {
+      writing-mode: vertical-rl;
+      font-size: 0.9em;
+      letter-spacing: 0.15em;
+      text-align: center;
+    }
+  }
+
+  &.icons a {
+    font-size: 20px;
+    display: block;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bottomSocial {
+    position: initial;
+
+    &:before {
+      display: none;
+    }
+
+    &.text {
+      display: none;
+    }
+
+    &.icons {
+      width: 100%;
+      text-align: center;
+      margin: -35px 0 30px 0;
+
+      a {
+        display: inline-block;
+
+        &:not(:first-child) {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import '../../../assets/styles/settings/_colors.scss';
+@import '../../../assets/styles/arrayStyle';
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 5%;
+  background: $background_color;
+  background: rgba($background_color, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  ul.navMenu {
+    animation: navAnimation ease-out 0.25s;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    line-height:75px;
+
+    &.pullRight {
+      float:right
+    }
+
+    > li {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+
+      &.navBrand a {
+        color: #00c4ff;
+        font-weight: 400;
+        font-size: 18px;
+        font-family: ' Ubuntu', sans-serif;
+      }
+    }
+  }
+}
+
+@keyframes navAnimation {
+  0% {
+    opacity: 0;
+    filter: blur(100px);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav {
+    ul.pullRight {
+      display: none;
+    }
+  }
+}

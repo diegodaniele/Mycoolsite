@@ -1,0 +1,101 @@
+@import '../../../../../assets/styles/settings/colors';
+
+.splash {
+  min-height: 100%;
+  padding: 100px 25px 250px 25px;
+  display: flex;
+  align-items: center;
+
+  .identityContainer {
+    display: inline-block;
+    padding: 30px;
+    margin-top: 50px;
+    margin-left: 10%;
+    font-weight: 500;
+    text-align: left;
+    animation: identityContainerAnimation ease-out 0.25s;
+    transition: opacity 0.05s;
+
+    > h1, > h2, > h3 {
+      margin: 0;
+      font-family: 'Ubuntu', sans-serif;
+    }
+
+    > h1 {
+      color: $text_color_strong;
+      font-size: 3em;
+      margin-left: -2px;
+
+      &:after {
+        content: ';';
+      }
+    }
+
+    > h2 {
+      font-size: 2em;
+      font-weight: 500;
+      margin-top: 25px;
+    }
+
+    > h3 {
+      color: mix($background_color, $text_color, 30%);
+      margin-bottom: 25px;
+      font-weight: 400;
+    }
+
+    > p {
+      margin-top: 50px;
+      width: 90%;
+      max-width: 500px;
+      line-height: 1.5em;
+      color: $text_color;
+
+      > strong {
+        color: $text_color_strong;
+        font-weight: 600;
+      }
+    }
+
+    .actionButtons {
+      margin-left: -5px;
+
+      button, a {
+        white-space: nowrap;
+        margin: 5px 5px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .splash {
+    .identityContainer {
+      margin-left: 5%;
+
+      > h1 {
+        font-size: 2em;
+      }
+
+      > h2 {
+        font-size: 1.5em;
+      }
+
+      > h3 {
+        font-size: 1.1em;
+      }
+
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .splash {
+    .identityContainer {
+      margin-left: 2%;
+
+      p {
+      }
+    }
+  }
+}

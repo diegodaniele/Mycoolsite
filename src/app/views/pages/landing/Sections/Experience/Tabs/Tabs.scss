@@ -1,0 +1,70 @@
+@import '../../../../../../assets/styles/settings/colors';
+
+.tabsArea {
+  width: 95%;
+  max-width: 750px;
+  margin: auto;
+  display: flex;
+
+  .tabs {
+    position: relative;
+    border-right: solid 2px rgba($text_color, 0.2);
+    height: 200px;
+
+    .tab {
+      padding: 0 15px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      font-size: 0.9em;
+      font-weight: 600;
+      text-align: right;
+      border-right: solid 2px transparent;
+      transition: border-right-color 0.3s;
+      margin-right: -2px;
+      align-items: center;
+
+      > span {
+        width: 100%;
+        text-align: right;
+      }
+
+      &:hover {
+        border-right: solid 2px rgba($text_color_strong, 0.25);
+      }
+
+      &.selected {
+        color: $accent_color;
+      }
+    }
+
+    .tabIndicator {
+      position: absolute;
+      right: -2px;
+      width: 2px;
+      height: 40px;
+      background: $accent_color;
+      margin-top: 0;
+      transition: margin-top 0.15s;
+    }
+  }
+
+  .tabArea {
+    flex: 1;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .tabsArea {
+    width: 100%;
+
+    .tabs {
+      width: 80px;
+    }
+
+    .tabArea {
+      padding: 10px 10px;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import 'settings/colors';
+
+ul.arrayStyle {
+  color: rgba($text_color, 0.6);
+  font-family: 'Fira Mono', monospace;
+  font-size: 12px;
+
+  li {
+    float: left;
+
+    &:first-child {
+      &:before {
+        float: left;
+        content: 'let options = ["';
+        font-family: 'Fira Mono', monospace;
+      }
+    }
+
+    &:not(:last-child) {
+      &:after {
+        float: right;
+        content: '", "';
+        font-family: 'Fira Mono', monospace;
+      }
+    }
+
+    &:last-child {
+      &:after {
+        float: right;
+        content: '"]';
+        font-family: 'Fira Mono', monospace;
+      }
+    }
+
+    a {
+      color: $text_color_strong;
+      font-size: 14px;
+
+      &:hover {
+        color: $text_color_strong;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &.java {
+    li:first-child {
+      &:before {
+        content: 'string[] options = {"';
+      }
+    }
+
+    li:last-child {
+      &:after {
+        content: '"}';
+      }
+    }
+  }
+
+  &.javascript {
+    li:first-child {
+      &:before {
+        content: 'const options = ["';
+      }
+    }
+
+    li:last-child {
+      &:after {
+        content: '"]';
+      }
+    }
+  }
+
+  &.go {
+    li:first-child {
+      &:before {
+        content: 'options := []string{"';
+      }
+    }
+    li:last-child {
+      &:after {
+        content: '"}';
+      }
+    }
+  }
+}
